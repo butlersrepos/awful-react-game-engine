@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
-
-import logo from '../../assets/logo.svg'
+import PlayerSprite from '../PlayerSprite'
+import KeyboardListener from '../KeyboardListener'
 import './App.css'
 
 class App extends Component {
   render () {
     return (
       <div className='App'>
-        <header className='App-header'>
-          <img src={logo} className='App-logo' alt='logo' />
-          <h1 className='App-title'>Welcome to Eric's React stack</h1>
-        </header>
+        <PlayerSprite />
+        <KeyboardListener />
       </div>
     )
   }
