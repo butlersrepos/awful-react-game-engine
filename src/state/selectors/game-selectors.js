@@ -4,3 +4,7 @@ export const isMoving = state => {
     state.controls.S_DOWN ||
     state.controls.D_DOWN
 }
+
+export const facing = state => {
+  
+}
