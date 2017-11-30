@@ -56,9 +56,9 @@ const SpriteMapping = {
 }
 
 class Sprite extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
-    
+
     const spriteAction = `walk-${this.props.playerDirection}`
     this.state = {
       frame: SpriteMapping[spriteAction].colStart,
@@ -78,11 +78,11 @@ class Sprite extends Component {
     })
   }
 
-  componentDidMount () {
+  componentDidMount() {
     setInterval(this.tick, this.state.animationSpeed)
   }
 
-  render () {
+  render() {
     const spriteAction = `walk-${this.props.playerDirection}`
 
     return <div style={{
