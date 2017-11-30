@@ -15,8 +15,6 @@ export default function* () {
     if( S ) yield put({ type: `MOVE_DOWN` })
     if( D ) yield put({ type: `MOVE_RIGHT` })
     
-    
-
     yield call(delay, 50)
   }
 }
