@@ -10,12 +10,11 @@ export default function* () {
     const S = yield select(state => state.controls.S_DOWN)
     const D = yield select(state => state.controls.D_DOWN)
     
+    // Map literal keys to ingame action
     if( W ) yield put({ type: `MOVE_UP` })
     if( A ) yield put({ type: `MOVE_LEFT` })
     if( S ) yield put({ type: `MOVE_DOWN` })
     if( D ) yield put({ type: `MOVE_RIGHT` })
-    
-    
 
     yield call(delay, 50)
   }
