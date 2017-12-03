@@ -1,7 +1,7 @@
-import { take, put } from 'redux-saga/effects'
+import { take } from 'redux-saga/effects'
 
 export default function* () {
   while (true) {
-    const action = yield take('KEYDOWN')
+    yield take('KEYDOWN')
   }
 }

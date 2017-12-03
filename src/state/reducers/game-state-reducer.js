@@ -1,4 +1,5 @@
 import { config } from 'src//game-config'
+import { PREFABS } from 'src/assets//tileset-prefabs'
 
 const initialState = {
   worldWidth: 20,
@@ -6,7 +7,21 @@ const initialState = {
   tileScale: 32,
   playerX: 0,
   playerY: 0,
-  playerDirection: 'down'
+  playerDirection: 'down',
+  terrainLayer: [
+    [PREFABS.TOP_LEFT, PREFABS.TOP_CENTER, PREFABS.TOP_CENTER, PREFABS.TOP_CENTER, PREFABS.TOP_CENTER, PREFABS.TOP_CENTER, PREFABS.TOP_RIGHT],
+    [PREFABS.MIDDLE_LEFT, PREFABS.CENTER, PREFABS.CENTER, PREFABS.CENTER, PREFABS.CENTER, PREFABS.CENTER, PREFABS.MIDDLE_RIGHT],
+    [PREFABS.BOTTOM_LEFT, PREFABS.BOTTOM_CENTER, PREFABS.BOTTOM_CENTER, PREFABS.BOTTOM_CENTER, PREFABS.BOTTOM_CENTER, PREFABS.BOTTOM_CENTER, PREFABS.BOTTOM_RIGHT],
+    [PREFABS.FULL, PREFABS.FULL, PREFABS.FULL, PREFABS.FULL, PREFABS.FULL, PREFABS.FULL, PREFABS.FULL],
+    [PREFABS.TOP_LEFT, PREFABS.TOP_CENTER, PREFABS.TOP_CENTER, PREFABS.TOP_CENTER, PREFABS.TOP_CENTER, PREFABS.TOP_CENTER, PREFABS.TOP_RIGHT],
+  ],
+  objectLayer: [
+    [],
+    [],
+    [],
+    [],
+    [],
+  ]
 }
 
 export default (state = initialState, action) => {

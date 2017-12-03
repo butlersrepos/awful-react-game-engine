@@ -1,0 +1,16 @@
+export const TilesetPositions = {
+  topLeft: [0,0],
+  topCenter: [0,1],
+  topRight: [0,2],
+  middleLeft: [1,0],
+  center: [1,1],
+  middleRight: [1,2],
+  bottomLeft: [2,0],
+  bottomCenter: [2,1],
+  bottomRight: [2,2],
+  innerTopLeft: [0,3],
+  innerTopRight: [0,4],
+  innerBottomLeft: [1,3],
+  innerBottomRight: [1,4],
+  full: [2,3],
+}
