@@ -1,6 +1,6 @@
-import Sprite from '../../presenters/Sprite'
+import Sprite from 'src/components/Sprite'
 import { connect } from 'react-redux'
-import { isMoving } from '../../state/selectors'
+import { isMoving } from 'src/state/selectors'
 
 const mapStateToProps = state => ({
   playerDirection: state.game.playerDirection,

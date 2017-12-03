@@ -1,5 +1,6 @@
 import { call, select, put } from 'redux-saga/effects'
 import { isMoving } from '../selectors'
+import { config } from 'src//game-config'
 
 const delay = ms => new Promise(res => setTimeout(res, ms))
 
@@ -16,6 +17,6 @@ export default function* () {
     if( S ) yield put({ type: `MOVE_DOWN` })
     if( D ) yield put({ type: `MOVE_RIGHT` })
 
-    yield call(delay, 50)
+    yield call(delay, config.TICK_DELAY)
   }
 }
