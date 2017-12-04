@@ -1,6 +1,6 @@
 html {
-  background: '#111';
-  zoom: 2;
+  background: #111;
+  image-rendering: pixelated;
 }
 
 .App {

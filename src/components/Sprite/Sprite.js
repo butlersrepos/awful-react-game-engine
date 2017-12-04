@@ -93,7 +93,8 @@ class Sprite extends Component {
       left: `${this.props.playerX}px`,
       top: `${this.props.playerY}px`,
       backgroundPositionX: `-${this.state.frame * 64}px`,
-      backgroundPositionY: `-${SpriteMapping[spriteAction].row * 64}px`
+      backgroundPositionY: `-${SpriteMapping[spriteAction].row * 64}px`,
+      opacity: `${this.props.isGhost ? '0.55' : '1'}`
     }}
     />
   }

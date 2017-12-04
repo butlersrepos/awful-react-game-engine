@@ -15,4 +15,29 @@ const store = createStore(
 sagaMiddleware.run(facingSaga)
 sagaMiddleware.run(tickSaga)
 
+const rewindLength = 3000
+const recordInterval = 100
+const recordedFrames = rewindLength / recordInterval
+
+window.rewind = [JSON.stringify(store.getState())]
+
+setInterval(() => {
+  console.time('record state')
+  window.rewind.push(JSON.stringify(store.getState()))
+  if (window.rewind.length > recordedFrames) { window.rewind = window.rewind.slice(1) }
+  console.timeEnd('record state')
+}, recordInterval)
+
+window.rewindCooldown = false
+document.addEventListener('keyup', event => {
+  if (event.key === 't' && !window.rewindCooldown) {
+    window.rewindCooldown = true
+    setTimeout(() => window.rewindCooldown = false, rewindLength)
+    store.dispatch({
+      type: 'RESTORE_STATE',
+      payload: JSON.parse(window.rewind[0])
+    })
+  }
+})
+
 export default store
