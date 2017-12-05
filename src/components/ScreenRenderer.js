@@ -21,10 +21,10 @@ const mapStyles = {
 const mapStateToProps = state => ({
   terrain: state.game.terrainLayer,
   objectLayer: state.game.objectLayer,
-  showGhost: !window.rewindCooldown && state.controls.T_DOWN
+  showGhost: !state.game.rewindCooldown && state.controls.T_DOWN
 })
 
-export const MapRenderer = connect(mapStateToProps)(
+export const ScreenRenderer = connect(mapStateToProps)(
   class Map extends Component {
     render () {
       const { terrain, objectLayer, showGhost } = this.props

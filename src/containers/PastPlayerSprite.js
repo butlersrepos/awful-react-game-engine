@@ -3,13 +3,13 @@ import { connect } from 'react-redux'
 import { isMoving } from 'src/state/selectors'
 
 const mapStateToProps = state => {
-  const oldState = JSON.parse(window.rewind[0]);
+  const oldGameState = state.game.recordedStates[0] || {}
 
   return {
-    playerDirection: oldState.game.playerDirection,
-    playerX: oldState.game.playerX,
-    playerY: oldState.game.playerY,
-    isMoving: isMoving(oldState),
+    playerDirection: oldGameState.playerDirection || 'down',
+    playerX: oldGameState.playerX,
+    playerY: oldGameState.playerY,
+    isMoving: true,
     isGhost: true
   }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import character from '../../assets/character.png'
+import { config } from 'src/game-config'
 
 const spriteWidth = 64
 const spriteHeight = 64
@@ -56,7 +57,7 @@ const SpriteMapping = {
 }
 
 class Sprite extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     const spriteAction = `walk-${this.props.playerDirection}`
@@ -78,15 +79,17 @@ class Sprite extends Component {
     })
   }
 
-  componentDidMount() {
+  componentDidMount () {
     setInterval(this.tick, this.state.animationSpeed)
   }
 
-  render() {
+  render () {
     const spriteAction = `walk-${this.props.playerDirection}`
 
     return <div style={{
       background: `url(${character})`,
+      transformOrigin: 'top left',
+      transform: `scale(0.625)`,
       height: `${spriteHeight}px`,
       width: `${spriteWidth}px`,
       position: 'absolute',
