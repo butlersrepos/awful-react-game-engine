@@ -1,14 +1,16 @@
-import Sprite from 'src/components/Sprite'
 import { connect } from 'react-redux'
+import { Sprite } from 'src/components/Sprite'
 import { isMoving } from 'src/state/selectors'
+import character from 'src/assets/character.png'
 
 const mapStateToProps = state => {
   const oldGameState = state.game.recordedStates[0] || {}
 
   return {
-    playerDirection: oldGameState.playerDirection || 'down',
-    playerX: oldGameState.playerX,
-    playerY: oldGameState.playerY,
+    spritesheet: character,
+    spriteDirection: oldGameState.playerDirection || 'down',
+    spriteX: oldGameState.playerX,
+    spriteY: oldGameState.playerY,
     isMoving: true,
     isGhost: true
   }

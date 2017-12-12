@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import character from '../../assets/character.png'
 import { config } from 'src/game-config'
 
 const spriteWidth = 64
@@ -57,10 +56,11 @@ const SpriteMapping = {
 }
 
 class Sprite extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
-    const spriteAction = `walk-${this.props.playerDirection}`
+    const spriteAction = `walk-${this.props.spriteDirection}`
+
     this.state = {
       frame: SpriteMapping[spriteAction].colStart,
       action: spriteAction,
@@ -79,22 +79,22 @@ class Sprite extends Component {
     })
   }
 
-  componentDidMount () {
+  componentDidMount() {
     setInterval(this.tick, this.state.animationSpeed)
   }
 
-  render () {
-    const spriteAction = `walk-${this.props.playerDirection}`
+  render() {
+    const spriteAction = `walk-${this.props.spriteDirection}`
 
     return <div style={{
-      background: `url(${character})`,
+      background: `url(${this.props.spritesheet})`,
       transformOrigin: 'top left',
       transform: `scale(0.625)`,
       height: `${spriteHeight}px`,
       width: `${spriteWidth}px`,
       position: 'absolute',
-      left: `${this.props.playerX}px`,
-      top: `${this.props.playerY}px`,
+      left: `${this.props.spriteX}px`,
+      top: `${this.props.spriteY}px`,
       backgroundPositionX: `-${this.state.frame * 64}px`,
       backgroundPositionY: `-${SpriteMapping[spriteAction].row * 64}px`,
       opacity: `${this.props.isGhost ? '0.55' : '1'}`
@@ -103,4 +103,4 @@ class Sprite extends Component {
   }
 }
 
-export default Sprite
+export { Sprite }

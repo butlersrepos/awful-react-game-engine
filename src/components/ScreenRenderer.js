@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { TileRenderer } from './TileRenderer'
 import PlayerSprite from 'src/containers/PlayerSprite'
 import PastPlayerSprite from 'src/containers/PastPlayerSprite'
+import { EnemySprite } from 'src/containers//EnemySprite'
 
 const mapStyles = {
   mapRow: top => ({
@@ -26,7 +27,7 @@ const mapStateToProps = state => ({
 
 export const ScreenRenderer = connect(mapStateToProps)(
   class Map extends Component {
-    render () {
+    render() {
       const { terrain, objectLayer, showGhost } = this.props
 
       return <div style={mapStyles.terrainLayer}>
@@ -40,7 +41,7 @@ export const ScreenRenderer = connect(mapStateToProps)(
 
         {showGhost && <PastPlayerSprite />}
         <PlayerSprite />
-
+        <EnemySprite />
         {
           objectLayer.map((rows, rowIndex) => {
             return <div

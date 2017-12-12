@@ -1,3 +1,1 @@
-import Sprite from './Sprite'
-
-export default Sprite
+export { Sprite } from './Sprite'
