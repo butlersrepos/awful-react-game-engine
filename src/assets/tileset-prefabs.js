@@ -9,9 +9,9 @@ const DEFAULT_PREFABS = {
 
 const GRASS_PREFABS = Object.keys(TilesetPositions).reduce((prev, position) => {
   const snakedName = position.replace(/([A-Z])/g, (m, p1) => `_${p1}`)
-  const pascaledName = snakedName.toUpperCase()
+  const uppercasedName = snakedName.toUpperCase()
 
-  prev[pascaledName] = {
+  prev[uppercasedName] = {
     tileset: 'grassToRock',
     tilePosition: position
   }

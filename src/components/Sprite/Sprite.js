@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import character from '../../assets/character.png'
-import { config } from 'src/game-config'
 
 const spriteWidth = 64
 const spriteHeight = 64

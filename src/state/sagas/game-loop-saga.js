@@ -1,5 +1,4 @@
 import { call, select, put } from 'redux-saga/effects'
-import { isMoving } from '../selectors'
 import { config } from 'src/game-config'
 
 const delay = ms => new Promise(res => setTimeout(res, ms))

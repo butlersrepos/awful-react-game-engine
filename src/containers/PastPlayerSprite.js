@@ -1,6 +1,5 @@
 import Sprite from 'src/components/Sprite'
 import { connect } from 'react-redux'
-import { isMoving } from 'src/state/selectors'
 
 const mapStateToProps = state => {
   const oldGameState = state.game.recordedStates[0] || {}
